@@ -3,6 +3,7 @@ import { Github, Linkedin, Mail, Download, Menu, X, Sun, Moon, Briefcase, Gradua
 
 const CVWeb = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
     const [darkMode, setDarkMode] = useState(true);
     const [scrolled, setScrolled] = useState(false);
 
@@ -21,6 +22,37 @@ const CVWeb = () => {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setFormStatus('submitting');
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+        const data = new URLSearchParams();
+
+        for (const [key, value] of formData) {
+            data.append(key, value as string);
+        }
+
+        try {
+            const response = await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: data.toString(),
+            });
+
+            if (response.ok) {
+                setFormStatus('success');
+                form.reset();
+                setTimeout(() => setFormStatus('idle'), 5000);
+            } else {
+                setFormStatus('error');
+            }
+        } catch (error) {
+            setFormStatus('error');
+        }
     };
 
     const scrollToSection = (id: string) => {
@@ -488,8 +520,23 @@ const CVWeb = () => {
                                 </div>
                             </div>
 
-                            <form name="contacto" method="POST" data-netlify="true" className="space-y-5">
+                            <form
+                                name="contacto"
+                                onSubmit={handleSubmit}
+                                data-netlify="true"
+                                className="space-y-5"
+                            >
                                 <input type="hidden" name="form-name" value="contacto" />
+                                {formStatus === 'success' && (
+                                    <div className="p-4 bg-green-500/20 border border-green-500/50 text-green-400 rounded-xl animate-fadeIn">
+                                        ¡Mensaje enviado con éxito! Me pondré en contacto pronto.
+                                    </div>
+                                )}
+                                {formStatus === 'error' && (
+                                    <div className="p-4 bg-red-500/20 border border-red-500/50 text-red-400 rounded-xl animate-fadeIn">
+                                        Hubo un error al enviar. Por favor, intenta enviarme un mail directo.
+                                    </div>
+                                )}
                                 <div className="grid md:grid-cols-2 gap-5">
                                     <div className="space-y-2">
                                         <label htmlFor="name" className={`text-sm font-medium ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Nombre</label>
@@ -536,8 +583,12 @@ const CVWeb = () => {
                                         placeholder="Cuéntame sobre tu proyecto..."
                                     ></textarea>
                                 </div>
-                                <button type="submit" className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold rounded-xl shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-1">
-                                    Enviar Mensaje
+                                <button
+                                    type="submit"
+                                    disabled={formStatus === 'submitting'}
+                                    className={`w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold rounded-xl shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed`}
+                                >
+                                    {formStatus === 'submitting' ? 'Enviando...' : 'Enviar Mensaje'}
                                 </button>
                             </form>
                         </div>
