@@ -523,7 +523,6 @@ const CVWeb = () => {
                             <form
                                 name="contacto"
                                 onSubmit={handleSubmit}
-                                data-netlify="true"
                                 className="space-y-5"
                             >
                                 <input type="hidden" name="form-name" value="contacto" />
