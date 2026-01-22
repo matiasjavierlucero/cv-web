@@ -427,6 +427,25 @@ const CVWeb = () => {
                     </div>
                 </section>
 
+
+
+                {/* Educación Section */}
+                <section id="educacion" className="animate-fadeInUp">
+                    <div className="flex items-center gap-4 mb-8">
+                        <div className="relative">
+                            <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 rounded-2xl blur opacity-75" />
+                            <div className="relative w-14 h-14 bg-gradient-to-br from-red-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <GraduationCap size={28} className="text-white" />
+                            </div>
+                        </div>
+                        <h3 className={`text-4xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Educación</h3>
+                    </div>
+                    <div className={`${darkMode ? 'bg-gray-800/40' : 'bg-white/80'} backdrop-blur-xl p-10 rounded-3xl shadow-2xl ${darkMode ? 'border-gray-700/50' : 'border-gray-200'} border transition-all duration-300 hover:shadow-3xl hover:-translate-y-1`}>
+                        <h4 className={`text-3xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'} mb-2`}>Técnico Superior en Desarrollo de Software</h4>
+                        <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} text-lg`}>Instituto Tecnológico</p>
+                    </div>
+                </section>
+
                 {/* Contacto Section */}
                 <section id="contacto" className="animate-fadeInUp">
                     <div className="flex items-center gap-4 mb-8">
@@ -444,7 +463,7 @@ const CVWeb = () => {
                             <div>
                                 <h4 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'} mb-6`}>¿Hablamos?</h4>
                                 <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} text-lg mb-8 leading-relaxed`}>
-                                    Estoy abierto a nuevas oportunidades, colaboraciones en proyectos de Data Engineering oBackend con Python, y desafíos en el sector AgTech.
+                                    Estoy abierto a nuevas oportunidades, colaboraciones en proyectos de Data Engineering o Backend con Python, y desafíos en el sector AgTech.
                                 </p>
 
                                 <div className="space-y-6">
@@ -522,23 +541,6 @@ const CVWeb = () => {
                                 </button>
                             </form>
                         </div>
-                    </div>
-                </section>
-
-                {/* Educación Section */}
-                <section id="educacion" className="animate-fadeInUp">
-                    <div className="flex items-center gap-4 mb-8">
-                        <div className="relative">
-                            <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 rounded-2xl blur opacity-75" />
-                            <div className="relative w-14 h-14 bg-gradient-to-br from-red-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg">
-                                <GraduationCap size={28} className="text-white" />
-                            </div>
-                        </div>
-                        <h3 className={`text-4xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Educación</h3>
-                    </div>
-                    <div className={`${darkMode ? 'bg-gray-800/40' : 'bg-white/80'} backdrop-blur-xl p-10 rounded-3xl shadow-2xl ${darkMode ? 'border-gray-700/50' : 'border-gray-200'} border transition-all duration-300 hover:shadow-3xl hover:-translate-y-1`}>
-                        <h4 className={`text-3xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'} mb-2`}>Técnico Superior en Desarrollo de Software</h4>
-                        <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} text-lg`}>Instituto Tecnológico</p>
                     </div>
                 </section>
             </div>
