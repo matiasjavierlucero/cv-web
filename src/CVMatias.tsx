@@ -149,14 +149,25 @@ const CVWeb = () => {
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="animate-fadeIn">
                         <div className="flex flex-col md:flex-row items-start md:items-center gap-8 mb-8">
-                            <div className="relative group">
+                            <div className="relative group perspective">
                                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity" />
-                                <div className="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden rounded-3xl bg-gray-800 border-2 border-white/20 shadow-2xl transform transition-all duration-500 group-hover:scale-105">
-                                    <img
-                                        src="/matias-profile.png"
-                                        alt="Matías Javier Lucero"
-                                        className="w-full h-full object-cover"
-                                    />
+                                <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-3xl [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] transition-all duration-700 cursor-pointer shadow-2xl">
+                                    {/* Front Side */}
+                                    <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-3xl overflow-hidden border-2 border-white/20">
+                                        <img
+                                            src="/matias-profile.png"
+                                            alt="Matías Javier Lucero"
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                    {/* Back Side */}
+                                    <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl overflow-hidden border-2 border-white/20">
+                                        <img
+                                            src="/matias-profile-alt.png"
+                                            alt="Matías Javier Lucero Alt"
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
                                 </div>
                             </div>
                             <div className="flex-1">
@@ -627,6 +638,10 @@ const CVWeb = () => {
         
         * {
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .perspective {
+          perspective: 1000px;
         }
         
         @keyframes fadeIn {
