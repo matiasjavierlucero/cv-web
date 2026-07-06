@@ -243,11 +243,10 @@ const CVWeb = () => {
                     </div>
                     <div className={`${darkMode ? 'bg-gray-800/40' : 'bg-white/80'} backdrop-blur-xl p-10 rounded-3xl shadow-2xl ${darkMode ? 'border-gray-700/50' : 'border-gray-200'} border transition-all duration-300 hover:shadow-3xl hover:-translate-y-1`}>
                         <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} leading-relaxed text-lg`}>
-                            Desarrollador Backend con experiencia sólida en Python, desarrollo de APIs REST, diseño de pipelines de datos
-                            y procesamiento de información geoespacial. Actualmente trabajando en Kilimo (AgTech), donde desarrollo y mantengo
-                            servicios backend para integración de datos agronómicos, climáticos y satelitales. Complemento mi perfil técnico
-                            con experiencia docente activa desde 2021, formando desarrolladores en Python, lo que refuerza mis habilidades
-                            de comunicación, mentoring y pensamiento estructurado.
+                            Desarrollador Backend con foco en Data Engineering, experto en ecosistemas Python (3.11+) y bases de datos (PostgreSQL). 
+                            Actualmente en Kilimo, centralizo el procesamiento de información climática y geoespacial diseñando pipelines bajo arquitecturas Data Lake (Bronze/Silver/Gold). 
+                            Aporto valor diferencial mediante la orquestación de infraestructura cloud en AWS (Lambda, S3) usando Terraform y la creación de flujos CI/CD robustos. 
+                            En paralelo, mi rol como docente activo desde 2021 consolida mis habilidades de comunicación y pensamiento estructurado
                         </p>
                     </div>
                 </section>
