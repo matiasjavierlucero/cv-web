@@ -92,7 +92,7 @@ const CVWeb = () => {
 
                         {/* Desktop Navigation */}
                         <div className="hidden md:flex items-center space-x-6">
-                            {['perfil', 'experiencia', 'docencia', 'habilidades', 'contacto'].map((section) => (
+                            {['perfil', 'experiencia', 'docencia', 'habilidades', 'proyectos', 'contacto'].map((section) => (
                                 <button
                                     key={section}
                                     onClick={() => scrollToSection(section)}
@@ -126,7 +126,7 @@ const CVWeb = () => {
                 {mobileMenuOpen && (
                     <div className={`md:hidden ${darkMode ? 'bg-gray-900/95' : 'bg-white/95'} backdrop-blur-xl border-t ${darkMode ? 'border-gray-800' : 'border-gray-200'}`}>
                         <div className="px-4 py-3 space-y-3">
-                            {['perfil', 'experiencia', 'docencia', 'habilidades', 'contacto'].map((section) => (
+                            {['perfil', 'experiencia', 'docencia', 'habilidades', 'proyectos', 'contacto'].map((section) => (
                                 <button
                                     key={section}
                                     onClick={() => scrollToSection(section)}
@@ -470,6 +470,111 @@ const CVWeb = () => {
                 </section>
 
 
+
+                {/* Proyectos Personales Section */}
+                <section id="proyectos" className="animate-fadeInUp">
+                    <div className="flex items-center gap-4 mb-8">
+                        <div className="relative">
+                            <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl blur opacity-75" />
+                            <div className="relative w-14 h-14 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <Rocket size={28} className="text-white" />
+                            </div>
+                        </div>
+                        <h3 className={`text-4xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Proyectos Personales</h3>
+                    </div>
+
+                    <div className={`${darkMode ? 'bg-gray-800/40' : 'bg-white/80'} backdrop-blur-xl p-8 rounded-3xl shadow-2xl ${darkMode ? 'border-gray-700/50' : 'border-gray-200'} border transition-all duration-300 hover:shadow-3xl hover:-translate-y-1 group`}>
+                        <div className="flex flex-col md:flex-row md:items-start gap-6">
+
+                            {/* Logo / Ícono */}
+                            <div className="flex-shrink-0">
+                                <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg border border-white/10 group-hover:scale-110 transition-transform">
+                                    <img
+                                        src="https://tasajusta.vercel.app/icon.svg"
+                                        alt="TasaJusta"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="flex-1">
+                                {/* Header */}
+                                <div className="flex flex-wrap items-center gap-3 mb-3">
+                                    <a
+                                        href="https://tasajusta.vercel.app/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:opacity-80 transition-opacity"
+                                    >
+                                        <h4 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>TasaJusta</h4>
+                                    </a>
+                                    <span className="px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-semibold border border-emerald-500/30 flex items-center gap-1.5">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                                        En producción
+                                    </span>
+                                </div>
+
+                                <p className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 font-bold text-lg mb-3">
+                                    Plataforma de inteligencia de precios para el mercado de autos usados argentino
+                                </p>
+
+                                <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} leading-relaxed mb-5`}>
+                                    Estima el precio justo de cualquier auto usado en Argentina usando un modelo ML entrenado sobre publicaciones reales,
+                                    detecta oportunidades de compra (publicaciones más de 10% por debajo del mercado) y cruza los precios con el dólar blue —
+                                    un ángulo único para el contexto económico argentino.
+                                </p>
+
+                                {/* Features */}
+                                <div className={`grid md:grid-cols-2 gap-3 ${darkMode ? 'text-gray-300' : 'text-gray-700'} mb-6`}>
+                                    {[
+                                        'Modelo LightGBM entrenado sobre publicaciones reales de DeRuedas',
+                                        'Detector de oportunidades con scoring de anomalías de precio',
+                                        'Pipeline ETL semanal automatizado con GitHub Actions',
+                                        'Arquitectura medallion (Bronze → Silver → Gold) en AWS S3',
+                                        'API FastAPI deployada en AWS Lambda + API Gateway (Terraform)',
+                                        'Frontend Next.js 14 en Vercel con SSR y streaming',
+                                    ].map((item, idx) => (
+                                        <div key={idx} className="flex items-start gap-3 group-hover:translate-x-1 transition-transform duration-200">
+                                            <div className="mt-1.5 w-2 h-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 flex-shrink-0" />
+                                            <p className="text-sm">{item}</p>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Tech stack */}
+                                <div className="flex flex-wrap gap-2 mb-6">
+                                    {['Python', 'FastAPI', 'LightGBM', 'Next.js 14', 'AWS Lambda', 'AWS S3', 'Supabase', 'Terraform', 'GitHub Actions', 'Polars', 'Docker'].map(tech => (
+                                        <span key={tech} className="px-3 py-1.5 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 text-emerald-300 rounded-lg text-sm font-semibold border border-emerald-500/30 hover:scale-105 transition-transform cursor-default">
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                {/* Links */}
+                                <div className="flex flex-wrap gap-3">
+                                    <a
+                                        href="https://tasajusta.vercel.app/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-0.5 text-sm"
+                                    >
+                                        <Globe size={16} />
+                                        Ver demo en vivo
+                                    </a>
+                                    <a
+                                        href="https://github.com/matiasjavierlucero/tasajusta"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`flex items-center gap-2 px-5 py-2.5 ${darkMode ? 'bg-gray-700/60 hover:bg-gray-700 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-900'} font-semibold rounded-xl transition-all duration-300 shadow hover:-translate-y-0.5 text-sm border ${darkMode ? 'border-gray-600' : 'border-gray-200'}`}
+                                    >
+                                        <Github size={16} />
+                                        Código en GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 {/* Educación Section */}
                 <section id="educacion" className="animate-fadeInUp">
