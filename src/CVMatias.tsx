@@ -732,7 +732,7 @@ const CVWeb = () => {
                             <Mail size={24} />
                         </a>
                     </div>
-                    <p className="text-center text-gray-400 text-sm">© 2026 - By 1926Dev - All rights reserved.</p>
+                    <p className="text-center text-gray-400 text-sm">© 2026 - By mjlucero.com - All rights reserved.</p>
                 </div>
             </footer>
 
