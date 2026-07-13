@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import PixelETL from './components/PixelETL';
 import {
     Github, Linkedin, Mail, Download, Menu, X, Sun, Moon,
     Briefcase, GraduationCap, Code, Database, Cloud, Globe,
@@ -167,14 +168,13 @@ const slideLeft = {
 const ROLES = [
     'Python Backend Developer',
     'Data Engineer',
-    'Profesor de Programación',
-    'Arquitecto de Datos',
+    'Docente de Desarrollo de Software',
 ];
 
 const STATS = [
     { value: 5,   suffix: '+', label: 'años de experiencia' },
     { value: 120, suffix: '+', label: 'alumnos activos'     },
-    { value: 3,   suffix: '',  label: 'frameworks Python'   },
+    { value: 30,  suffix: '+', label: 'tecnologías'          },
     { value: 2,   suffix: '',  label: 'proyectos live'      },
 ];
 
@@ -213,7 +213,7 @@ const SKILL_CATEGORIES = [
         title: 'Idiomas',
         gradient: 'from-slate-400 to-gray-500',
         chipClass: 'bg-slate-500/10 text-slate-300 border-slate-500/25 hover:bg-slate-500/20',
-        skills: ['Español (Nativo)', 'Inglés (Intermedio)'],
+        skills: ['Español (Nativo)', 'Inglés Técnico'],
     },
 ];
 
@@ -728,6 +728,11 @@ const CVWeb = () => {
                                     Estima el precio justo de cualquier auto usado en Argentina usando un modelo ML entrenado sobre publicaciones reales,
                                     detecta oportunidades de compra (publicaciones más de 10% por debajo del mercado) y cruza los precios con el dólar blue.
                                 </p>
+
+                                {/* ETL Pipeline Animation */}
+                                <div className="mb-5">
+                                    <PixelETL />
+                                </div>
                                 <div className={`grid md:grid-cols-2 gap-2.5 ${dk ? 'text-gray-300' : 'text-gray-700'} mb-5 text-sm`}>
                                     {[
                                         'Modelo LightGBM entrenado sobre publicaciones reales de DeRuedas',
