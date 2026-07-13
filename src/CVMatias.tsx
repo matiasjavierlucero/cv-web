@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { motion, useInView } from 'framer-motion';
 import PixelETL from './components/PixelETL';
 import {
@@ -245,25 +246,22 @@ const CVWeb = () => {
         document.body.removeChild(link);
     };
 
+    const formRef = useRef<HTMLFormElement>(null);
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        if (!formRef.current) return;
         setFormStatus('submitting');
-        const form = e.currentTarget;
-        const data = new URLSearchParams();
-        for (const [k, v] of new FormData(form)) data.append(k, v as string);
         try {
-            const res = await fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: data.toString(),
-            });
-            if (res.ok) {
-                setFormStatus('success');
-                form.reset();
-                setTimeout(() => setFormStatus('idle'), 5000);
-            } else {
-                setFormStatus('error');
-            }
+            await emailjs.sendForm(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                formRef.current,
+                { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY },
+            );
+            setFormStatus('success');
+            formRef.current.reset();
+            setTimeout(() => setFormStatus('idle'), 5000);
         } catch {
             setFormStatus('error');
         }
@@ -999,7 +997,7 @@ const CVWeb = () => {
                                 </div>
                             </div>
 
-                            <form name="contacto" onSubmit={handleSubmit} className="space-y-4">
+                            <form ref={formRef} name="contacto" onSubmit={handleSubmit} className="space-y-4">
                                 <input type="hidden" name="form-name" value="contacto" />
                                 {formStatus === 'success' && (
                                     <div className="p-4 bg-green-500/15 border border-green-500/40 text-green-400 rounded-xl text-sm">
