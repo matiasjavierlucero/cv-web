@@ -608,6 +608,121 @@ const CVWeb = () => {
                                 </div>
                             </motion.div>
 
+                            {/* ItecLabs */}
+                            <motion.div variants={slideLeft} className="relative">
+                                <div className="absolute left-6 top-8 w-5 h-5 bg-gradient-to-r from-slate-400 to-cyan-500 rounded-full border-4 border-[#080810] hidden md:block" />
+                                <div className={`md:ml-20 ${card} p-8 hover:-translate-y-1 transition-all duration-300 group`}>
+
+                                    {/* Header */}
+                                    <div className="flex items-center gap-3 mb-3 flex-wrap">
+                                        <a href="https://www.itecriocuarto.org.ar/itec-labs" target="_blank" rel="noopener noreferrer">
+                                            <div className="w-11 h-11 overflow-hidden bg-white rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform p-1 border border-gray-200">
+                                                <img src="https://sindicarne.com.ar/static/img/Logoiteclabs.png" alt="ItecLabs" className="w-full h-full object-contain" />
+                                            </div>
+                                        </a>
+                                        <a href="https://www.itecriocuarto.org.ar/itec-labs" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                                            <h4 className={`text-2xl font-bold ${dk ? 'text-white' : 'text-gray-900'}`}>ItecLabs</h4>
+                                        </a>
+                                        <span className="px-3 py-1 bg-slate-500/20 text-slate-400 rounded-full text-xs font-semibold border border-slate-500/30">Mentor</span>
+                                    </div>
+
+                                    <p className="text-transparent bg-clip-text bg-gradient-to-r from-slate-400 to-cyan-400 font-bold text-lg mb-2">
+                                        Desarrollador Web → Tech Lead → Mentor
+                                    </p>
+                                    <div className={`flex items-center gap-2 ${dk ? 'text-gray-400' : 'text-gray-600'} text-sm mb-5`}>
+                                        <Calendar size={14} />
+                                        <span>Dic 2019 — Actualidad</span>
+                                        <span className="mx-1">·</span>
+                                        <span className="text-slate-400 font-semibold">5+ años</span>
+                                    </div>
+
+                                    <p className={`${dk ? 'text-gray-300' : 'text-gray-700'} mb-6 leading-relaxed`}>
+                                        Laboratorio de software del ITEC Río Cuarto donde inicié mi carrera profesional mientras aún cursaba la tecnicatura.
+                                        Arranqué en un equipo de cuatro personas (TechLead, PO y dos desarrolladores estudiantes).
+                                        Con el tiempo asumí la responsabilidad técnica de los nuevos proyectos — y hoy ItecLabs{' '}
+                                        <span className={`font-semibold ${dk ? 'text-white' : 'text-gray-900'}`}>cuenta con más de 15 personas involucradas</span>.
+                                        Actualmente participo como mentor, guiando a los desarrolladores que se incorporan al equipo.
+                                    </p>
+
+                                    {/* Career evolution */}
+                                    <div className={`${dk ? 'bg-gray-900/50 border-gray-700/40' : 'bg-gray-50 border-gray-200'} rounded-2xl p-5 mb-6 border`}>
+                                        <p className={`text-xs font-semibold uppercase tracking-widest ${dk ? 'text-gray-500' : 'text-gray-400'} mb-4`}>Evolución de rol</p>
+                                        {(() => {
+                                            const phases = [
+                                                { period: 'Dic 2019 – 2021', role: 'Desarrollador Web', desc: 'Construcción de sistemas con Flask, FastAPI y Django', dot: '#38BDF8' },
+                                                { period: '2021 – 2023',      role: 'Tech Lead',         desc: 'Liderazgo técnico y toma de decisiones en nuevos proyectos', dot: '#818CF8' },
+                                                { period: '2023 – Hoy',       role: 'Mentor',            desc: 'Guía técnica y formación del nuevo equipo de desarrollo', dot: '#94A3B8' },
+                                            ];
+                                            return (
+                                                <div className="flex flex-col gap-3">
+                                                    {/* Dot + connector row */}
+                                                    <div className="flex items-center">
+                                                        {phases.map((phase, i, arr) => (
+                                                            <React.Fragment key={i}>
+                                                                <div className="w-4 h-4 rounded-full border-2 flex-shrink-0 relative z-10" style={{ borderColor: phase.dot, background: `${phase.dot}25` }} />
+                                                                {i < arr.length - 1 && (
+                                                                    <div className="flex-1 h-px opacity-30" style={{ background: `linear-gradient(to right, ${phase.dot}, ${arr[i+1].dot})` }} />
+                                                                )}
+                                                            </React.Fragment>
+                                                        ))}
+                                                    </div>
+                                                    {/* Text row */}
+                                                    <div className="flex items-start">
+                                                        {phases.map((phase, i) => (
+                                                            <div key={i} className="flex-1 pr-2">
+                                                                <span className={`text-xs ${dk ? 'text-gray-500' : 'text-gray-400'} block mb-1`}>{phase.period}</span>
+                                                                <p className={`text-xs font-bold ${dk ? 'text-white' : 'text-gray-900'} mb-1`}>{phase.role}</p>
+                                                                <p className={`text-xs ${dk ? 'text-gray-400' : 'text-gray-500'} leading-relaxed hidden md:block`}>{phase.desc}</p>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            );
+                                        })()}
+                                    </div>
+
+                                    {/* Projects grid */}
+                                    <p className={`text-xs font-semibold uppercase tracking-widest ${dk ? 'text-gray-500' : 'text-gray-400'} mb-3`}>Proyectos desarrollados</p>
+                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-2.5 mb-5">
+                                        {[
+                                            { logo: '/mellitus-logo.png', white: false, name: 'Clínica Mellitus', type: 'Salud Digital', desc: 'Turnero web + gestión de personal y pacientes' },
+                                            { logo: 'https://sindicarne.com.ar/static/img/logo.png', white: false, name: 'Sindicato de la Carne', type: 'Gremial', desc: 'Sistema integral de gestión para socios y beneficiarios' },
+                                            { logo: '/tecnored-logo.png', white: true, name: 'Tecnored', type: 'Industrial / IoT', desc: 'Consumo de datos de biodigestores con toma de decisiones automáticas' },
+                                            { logo: null, icon: '🏗️', name: 'Constructora', type: 'Construcción', desc: 'Plataforma web de administración de obras y gestión de proyectos' },
+                                            { logo: null, icon: '🔗', name: 'APIs para Terceros', type: 'Integración', desc: 'Desarrollo de APIs REST para clientes y sistemas externos' },
+                                        ].map((proj, i) => (
+                                            <div key={i} className={`${dk ? 'bg-gray-900/50 border-gray-700/40 hover:border-slate-500/50' : 'bg-gray-50 border-gray-200 hover:border-slate-300'} rounded-xl p-3.5 border transition-all duration-200`}>
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    {proj.logo ? (
+                                                        <div className={`w-7 h-7 rounded-lg overflow-hidden flex items-center justify-center flex-shrink-0 border p-0.5 ${(proj as any).white ? (dk ? 'bg-slate-700 border-slate-600' : 'bg-gray-800 border-gray-700') : 'bg-white border-gray-200'}`}>
+                                                            <img src={proj.logo} alt={proj.name} className="w-full h-full object-contain" />
+                                                        </div>
+                                                    ) : (
+                                                        <div className={`w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 text-sm ${dk ? 'bg-slate-700/50' : 'bg-gray-200'}`}>
+                                                            {(proj as any).icon}
+                                                        </div>
+                                                    )}
+                                                    <div className="min-w-0">
+                                                        <p className={`text-xs font-bold leading-tight ${dk ? 'text-white' : 'text-gray-900'}`}>{proj.name}</p>
+                                                        <p className="text-xs text-slate-400 font-medium">{proj.type}</p>
+                                                    </div>
+                                                </div>
+                                                <p className={`text-xs leading-relaxed ${dk ? 'text-gray-400' : 'text-gray-500'}`}>{proj.desc}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    {/* Tech stack */}
+                                    <div className="flex flex-wrap gap-2">
+                                        {['Python', 'Flask', 'FastAPI', 'Django', 'PostgreSQL', 'REST APIs', 'HTML/CSS/JS'].map(t => (
+                                            <span key={t} className="px-3 py-1.5 bg-slate-600/15 text-slate-300 rounded-lg text-xs font-semibold border border-slate-500/25 hover:scale-105 transition-transform cursor-default">
+                                                {t}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </motion.div>
+
                         </motion.div>
                     </div>
                 </motion.section>
@@ -767,6 +882,62 @@ const CVWeb = () => {
                                         Código en GitHub
                                     </a>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* RAG from Scratch */}
+                    <div className={`${card} p-8 mt-6 hover:-translate-y-1 transition-all duration-300 group`}>
+                        <div className="flex flex-col md:flex-row md:items-start gap-6">
+                            <div className="flex-shrink-0">
+                                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-600 to-purple-700 flex items-center justify-center shadow-lg border border-violet-500/30 group-hover:scale-110 transition-transform">
+                                    <span style={{ fontSize: 30 }}>🧠</span>
+                                </div>
+                            </div>
+                            <div className="flex-1">
+                                <div className="flex flex-wrap items-center gap-3 mb-3">
+                                    <a href="https://github.com/matiasjavierlucero/rag-from-scratch" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                                        <h4 className={`text-2xl font-bold ${dk ? 'text-white' : 'text-gray-900'}`}>RAG from Scratch</h4>
+                                    </a>
+                                    <span className="px-3 py-1 bg-violet-500/20 text-violet-300 rounded-full text-xs font-semibold border border-violet-500/30">Open Source</span>
+                                </div>
+                                <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-400 font-bold text-lg mb-3">
+                                    Pipeline RAG implementado desde cero — sin frameworks que oculten la magia
+                                </p>
+                                <p className={`${dk ? 'text-gray-300' : 'text-gray-700'} leading-relaxed mb-5 text-sm`}>
+                                    Dos etapas progresivas: primero RAG puro con NumPy y similitud coseno a mano, después un asistente
+                                    de documentación sobre 152 archivos reales de FastAPI con ChromaDB, sentence-transformers y
+                                    un LLM local corriendo con Ollama. Construido para <span className="text-violet-400 font-semibold">entender</span>, no para importar y rezar.
+                                </p>
+                                <div className={`grid md:grid-cols-2 gap-2.5 ${dk ? 'text-gray-300' : 'text-gray-700'} mb-5 text-sm`}>
+                                    {[
+                                        'Stage 1: vector store manual con NumPy + cosine similarity desde cero',
+                                        'Stage 2: API REST + UI web sobre 152 archivos de docs de FastAPI',
+                                        'Embeddings con all-MiniLM-L6-v2 (sentence-transformers)',
+                                        'Vector store persistente con ChromaDB e índice HNSW',
+                                        'LLM local via Ollama (llama3.2:1b → 3b) — sin API key, sin nube',
+                                        'Chunking consciente de estructura Markdown + curación de corpus',
+                                        'Memoria de sesión por UUID, hasta 3 intercambios de contexto',
+                                        'Endpoints de debug: inspección de chunks e índice vectorial',
+                                    ].map((item, i) => (
+                                        <div key={i} className="flex items-start gap-2.5 group-hover:translate-x-1 transition-transform duration-200">
+                                            <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-violet-500 to-purple-500 flex-shrink-0" />
+                                            <span>{item}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className="flex flex-wrap gap-2 mb-5">
+                                    {['Python 3.12', 'sentence-transformers', 'ChromaDB', 'Ollama', 'FastAPI', 'NumPy', 'HTML/JS'].map(t => (
+                                        <span key={t} className="px-3 py-1.5 bg-violet-600/15 text-violet-300 rounded-lg text-xs font-semibold border border-violet-500/25 hover:scale-105 transition-transform cursor-default">
+                                            {t}
+                                        </span>
+                                    ))}
+                                </div>
+                                <a href="https://github.com/matiasjavierlucero/rag-from-scratch" target="_blank" rel="noopener noreferrer"
+                                    className={`inline-flex items-center gap-2 px-5 py-2.5 font-semibold rounded-xl transition-all duration-300 shadow hover:-translate-y-0.5 text-sm border ${dk ? 'bg-gray-700/60 hover:bg-gray-700 text-white border-gray-600' : 'bg-gray-100 hover:bg-gray-200 text-gray-900 border-gray-200'}`}>
+                                    <Github size={15} />
+                                    Ver en GitHub
+                                </a>
                             </div>
                         </div>
                     </div>
