@@ -1074,7 +1074,7 @@ const CVWeb = () => {
                             </a>
                         ))}
                     </div>
-                    <p className="text-gray-500 text-xs">© 2026 · mjlucero.com · All rights reserved.</p>
+                    <p className="text-gray-500 text-xs">© 2026 · mjlucero.com ·Desarrollado por <a href="https://rolphy.dev"> rolphy.dev </a>· All rights reserved.</p>
                 </div>
             </footer>
 
