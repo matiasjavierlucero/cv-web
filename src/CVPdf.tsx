@@ -162,7 +162,7 @@ export default function CVPdf() {
                         company="Kilimo"
                         role="Python Backend Developer / Data Engineer"
                         period="Nov 2021 – Jun 2026 · 4+ años"
-                        note="Startup AgTech de riego inteligente · equipo distribuido (Argentina, Israel, España)"
+                        note="Startup AgTech de riego inteligente , ClimaTech· equipo distribuido (Argentina, Chile, Brasil, Perú, Bolivia, Colombia, México y USA)"
                         bullets={[
                             'Diseñé pipelines ETL que integran imágenes satelitales (Sentinel/Planet), índices NDVI y datos climáticos para modelos agronómicos en escala de producción',
                             'Implementé arquitectura Data Lake medallion (Bronze → Silver → Gold) en AWS S3 como fuente única de verdad para datos de múltiples clientes',
