@@ -24,7 +24,7 @@ export const profileData = {
       id: 1,
       role: "Python Backend Developer",
       company: "Kilimo",
-      period: "Nov 2021 - Presente",
+      period: "Nov 2021 - Jun 2026",
       description: "Desarrollo y mantenimiento de backend en Python. Optimización de consultas y arquitectura de datos.",
       type: "Full-time"
     },
@@ -32,7 +32,7 @@ export const profileData = {
       id: 2,
       role: "Profesor",
       company: "Instituto Tecnológico Rio Cuarto",
-      period: "Mar 2021 - Presente",
+      period: "Mar 2021 - Mar 2026",
       description: "Docencia en materias de desarrollo de software y programación.",
       type: "Part-time"
     },

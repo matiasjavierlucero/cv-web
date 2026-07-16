@@ -161,7 +161,7 @@ export default function CVPdf() {
                     <Entry
                         company="Kilimo"
                         role="Python Backend Developer / Data Engineer"
-                        period="Nov 2021 – Actualidad · 4+ años"
+                        period="Nov 2021 – Jun 2026 · 4+ años"
                         note="Startup AgTech de riego inteligente · equipo distribuido (Argentina, Israel, España)"
                         bullets={[
                             'Diseñé pipelines ETL que integran imágenes satelitales (Sentinel/Planet), índices NDVI y datos climáticos para modelos agronómicos en escala de producción',
@@ -204,7 +204,7 @@ export default function CVPdf() {
                     <Entry
                         company="Instituto Tecnológico Río Cuarto"
                         role="Profesor — Tecnicatura Superior en Desarrollo de Software"
-                        period="Mar 2021 – Actualidad · 4+ años"
+                        period="Mar 2021 – Mar 2026 · 5 años"
                         bullets={[
                             'Docente de Python, POO, backend y buenas prácticas con 120+ alumnos activos',
                             'Diseño de trabajos prácticos y evaluaciones orientados al mercado laboral real',
