@@ -10,14 +10,14 @@ export const profileData = {
     linkedin: "https://www.linkedin.com/in/matiasjavierlucero",
     github: "https://github.com/matiasjavierlucero"
   },
-  about: "Backend Developer especializado en Python con experiencia en Django, Flask y arquitecturas API Rest. Apasionado por la ingeniería de datos, la optimización de bases de datos PostgreSQL y la implementación de soluciones escalables usando Docker. Experiencia docente y en gestión de proyectos.",
+  about: "Backend Developer con 5+ años en entornos productivos. Especializado en microservicios Python, Data Lake en AWS con Airflow + dbt, ML con XGBoost + MLflow, y agentes IA con LangChain + Azure OpenAI. Docente activo con 180+ alumnos formados.",
   skills: [
     { name: "Python", category: "Backend", icon: Code },
-    { name: "Django", category: "Backend", icon: Server },
+    { name: "FastAPI / Django", category: "Backend", icon: Server },
     { name: "PostgreSQL", category: "Database", icon: Database },
-    { name: "Docker", category: "DevOps", icon: Terminal },
-    { name: "API Rest", category: "Backend", icon: Globe },
-    { name: "Data Engineering", category: "Data", icon: Cpu },
+    { name: "AWS + Terraform", category: "Cloud", icon: Terminal },
+    { name: "Airflow + dbt + MLflow", category: "Data & ML", icon: Cpu },
+    { name: "LangChain + Azure OpenAI", category: "IA / LLM", icon: Globe },
   ],
   experience: [
     {
@@ -25,7 +25,7 @@ export const profileData = {
       role: "Python Backend Developer",
       company: "Kilimo",
       period: "Nov 2021 - Jun 2026",
-      description: "Desarrollo y mantenimiento de backend en Python. Optimización de consultas y arquitectura de datos.",
+      description: "Microservicios FastAPI/Django/Celery en producción · Data Lake Medallion en AWS (Airflow, dbt, Glue, Athena) · Pipelines ML con XGBoost + MLflow · Agentes IA con LangChain/LangGraph + Azure OpenAI · IaC Terraform modular · Datos satelitales (SentinelHub, Planet Labs, rasterio).",
       type: "Full-time"
     },
     {

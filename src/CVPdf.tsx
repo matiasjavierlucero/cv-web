@@ -144,13 +144,14 @@ export default function CVPdf() {
                 <div style={{ marginBottom: 22 }}>
                     <SectionTitle>Perfil</SectionTitle>
                     <p style={{ fontSize: 11, color: GRAY, lineHeight: 1.65 }}>
-                        Backend Developer Python especializado en Data Engineering e infraestructura cloud, con{' '}
-                        <strong style={{ color: NAVY }}>5+ años de experiencia en entornos productivos</strong>.
-                        En Kilimo (AgTech), diseño pipelines ETL sobre arquitectura medallion en AWS S3, proceso
-                        datos satelitales y geoespaciales, y gestiono infraestructura serverless con Terraform.
-                        Complemento ese perfil con experiencia en liderazgo técnico en ItecLabs
-                        (equipo de 15+ personas) y docencia activa con{' '}
-                        <strong style={{ color: NAVY }}>120+ alumnos</strong>.
+                        Backend Developer Python con{' '}
+                        <strong style={{ color: NAVY }}>5+ años en entornos productivos</strong>{' '}
+                        especializado en Data Engineering, ML y soluciones de IA.
+                        En Kilimo (AgTech multi-país) diseñé microservicios con FastAPI/Django/Celery, construí un
+                        Data Lake Medallion sobre AWS S3/Glue/Athena orquestado con Airflow en EKS, desarrollé
+                        pipelines ML (XGBoost · MLflow) e implementé agentes IA con LangChain/LangGraph + Azure OpenAI.
+                        Complemento con Tech Lead en ItecLabs (15+ personas) y docencia activa con{' '}
+                        <strong style={{ color: NAVY }}>180+ alumnos formados</strong>.
                     </p>
                 </div>
 
@@ -162,15 +163,17 @@ export default function CVPdf() {
                         company="Kilimo"
                         role="Python Backend Developer / Data Engineer"
                         period="Nov 2021 – Jun 2026 · 4+ años"
-                        note="Startup AgTech de riego inteligente , ClimaTech· equipo distribuido (Argentina, Chile, Brasil, Perú, Bolivia, Colombia, México y USA)"
+                        note="Startup AgTech multi-país (Argentina, Chile, México, Perú, Colombia, Brasil) · equipo distribuido"
                         bullets={[
-                            'Diseñé pipelines ETL que integran imágenes satelitales (Sentinel/Planet), índices NDVI y datos climáticos para modelos agronómicos en escala de producción',
-                            'Implementé arquitectura Data Lake medallion (Bronze → Silver → Gold) en AWS S3 como fuente única de verdad para datos de múltiples clientes',
-                            'Infraestructura cloud como código con Terraform: Lambda, API Gateway, S3, IAM — deploy reproducible y auditable',
-                            'Automaticé flujos CI/CD con GitHub Actions: scraping periódico, validación de datos y deploy de servicios FastAPI',
-                            'Code reviews, refactors y participación en decisiones de arquitectura en equipo internacional',
+                            'Diseñé e implementé múltiples microservicios en producción con FastAPI · Django · Celery/Redis · SQLAlchemy 2.0 + Alembic, bajo Layered Architecture y CI/CD completo (GitHub Actions → ECS Fargate)',
+                            'Construí Data Lake Medallion (Bronze/Silver/Gold) sobre AWS S3/Glue/Athena, orquestado con Apache Airflow en Kubernetes (EKS) e integración dbt vía Astronomer Cosmos',
+                            'Desarrollé pipelines ML end-to-end — XGBoost · scikit-learn · MLflow — para clasificación de eventos hídricos, con inference periódica deployada en ECS Fargate',
+                            'Implementé agentes IA conversacionales con LangChain · LangGraph · Azure OpenAI (GPT-4) y prototipé pipeline RAG con Azure AI Search + Azure Document Intelligence',
+                            'Integré SentinelHub, Planet Labs y FAO WAPOR; procesamiento geoespacial con rasterio, GDAL, geopandas y rasterstats a escala',
+                            'IaC Terraform modular para múltiples microservicios: ECS Fargate, RDS PostgreSQL 15, Amazon MQ (RabbitMQ), ALB, ACM, Secrets Manager — multi-entorno stg/prod',
+                            'Servicio de notificaciones multi-canal (Firebase FCM · Twilio SMS · Email) con Factory + Strategy Pattern para selección dinámica de canal en runtime',
                         ]}
-                        tags={['Python', 'FastAPI', 'Flask', 'Django', 'SQLAlchemy', 'PostgreSQL', 'Polars', 'AWS S3', 'AWS Lambda', 'Terraform', 'Docker', 'GitHub Actions']}
+                        tags={['Python', 'FastAPI', 'Django', 'SQLAlchemy 2.0', 'Alembic', 'Celery', 'Redis', 'Airflow', 'dbt', 'MLflow', 'XGBoost', 'LangChain', 'Azure OpenAI', 'SentinelHub', 'rasterio', 'Firebase FCM', 'Twilio', 'AWS ECS', 'S3', 'Glue', 'Athena', 'EKS', 'Terraform', 'Docker', 'GitHub Actions']}
                     />
 
                     <Entry
@@ -206,7 +209,7 @@ export default function CVPdf() {
                         role="Profesor — Tecnicatura Superior en Desarrollo de Software"
                         period="Mar 2021 – Mar 2026 · 5 años"
                         bullets={[
-                            'Docente de Python, POO, backend y buenas prácticas con 120+ alumnos activos',
+                            'Docente de Python, POO, backend y buenas prácticas con 180+ alumnos formados',
                             'Diseño de trabajos prácticos y evaluaciones orientados al mercado laboral real',
                         ]}
                     />
@@ -246,12 +249,13 @@ export default function CVPdf() {
                     <SectionTitle>Habilidades Técnicas</SectionTitle>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px 24px' }}>
                         {[
-                            { cat: 'Backend',        items: 'Python (Avanzado) · FastAPI · Flask · Django · SQLAlchemy' },
-                            { cat: 'Data & ML',      items: 'Polars · Pandas · LightGBM · Pipelines ETL · Data Lake' },
-                            { cat: 'Cloud & IaC',    items: 'AWS (S3, Lambda, API Gateway) · Terraform · Docker · GitHub Actions' },
-                            { cat: 'Bases de datos', items: 'PostgreSQL · SQLite · Supabase' },
-                            { cat: 'Frontend',       items: 'Next.js 14 · React (básico)' },
-                            { cat: 'Otros',          items: 'Git · Code Review · Arquitectura REST · Procesamiento geoespacial' },
+                            { cat: 'Backend',        items: 'Python · FastAPI · Django · SQLAlchemy 2.0 · Alembic · Celery · Redis · Pydantic v2' },
+                            { cat: 'Data & ML',      items: 'Apache Airflow · dbt · MLflow · XGBoost · scikit-learn · Polars · Pandas · Medallion Architecture' },
+                            { cat: 'IA / LLM',       items: 'LangChain · LangGraph · Azure OpenAI (GPT-4) · RAG · Azure AI Search · Azure Document Intelligence' },
+                            { cat: 'Cloud & IaC',    items: 'AWS (ECS · RDS · S3 · Glue · Athena · Lambda · EKS) · Kubernetes · Terraform · Docker · GitHub Actions' },
+                            { cat: 'Geoespacial',    items: 'SentinelHub · Planet Labs · FAO WAPOR · rasterio · GDAL · geopandas · PostGIS' },
+                            { cat: 'Bases de datos', items: 'PostgreSQL · Redis · RabbitMQ · Amazon MQ · SQLite · Supabase' },
+                            { cat: 'Integraciones',  items: 'Firebase Admin SDK · Firebase FCM · Twilio SMS · Cloudflare' },
                         ].map(({ cat, items }) => (
                             <div key={cat} style={{ paddingBottom: 4 }}>
                                 <span style={{ fontSize: 10.5, fontWeight: 700, color: NAVY }}>{cat}: </span>

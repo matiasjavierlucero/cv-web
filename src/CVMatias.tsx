@@ -169,13 +169,14 @@ const slideLeft = {
 const ROLES = [
     'Python Backend Developer',
     'Data Engineer',
+    'ML & AI Engineer',
     'Docente de Desarrollo de Software',
 ];
 
 const STATS = [
     { value: 5,   suffix: '+', label: 'años de experiencia' },
-    { value: 120, suffix: '+', label: 'alumnos activos'     },
-    { value: 30,  suffix: '+', label: 'tecnologías'          },
+    { value: 180, suffix: '+', label: 'alumnos formados'    },
+    { value: 50,  suffix: '+', label: 'tecnologías'         },
     { value: 2,   suffix: '',  label: 'proyectos live'      },
 ];
 
@@ -184,37 +185,43 @@ const SKILL_CATEGORIES = [
         title: 'Backend',
         gradient: 'from-blue-500 to-cyan-500',
         chipClass: 'bg-blue-500/10 text-blue-300 border-blue-500/25 hover:bg-blue-500/20',
-        skills: ['Python 3.11+', 'FastAPI', 'Flask', 'Django', 'SQLAlchemy', 'REST APIs', 'Async/Await'],
+        skills: ['Python', 'FastAPI', 'Django', 'SQLAlchemy 2.0', 'Alembic', 'Celery', 'Redis', 'Pydantic v2', 'REST APIs'],
     },
     {
-        title: 'Data & Bases de Datos',
+        title: 'Data & ML',
         gradient: 'from-violet-500 to-purple-500',
         chipClass: 'bg-violet-500/10 text-violet-300 border-violet-500/25 hover:bg-violet-500/20',
-        skills: ['PostgreSQL', 'Polars', 'Pandas', 'Pipelines ETL', 'Medallion Architecture', 'SQLite'],
+        skills: ['Apache Airflow', 'dbt', 'MLflow', 'XGBoost', 'scikit-learn', 'Polars', 'Pandas', 'Medallion Architecture'],
+    },
+    {
+        title: 'IA / LLM',
+        gradient: 'from-pink-500 to-rose-500',
+        chipClass: 'bg-pink-500/10 text-pink-300 border-pink-500/25 hover:bg-pink-500/20',
+        skills: ['LangChain', 'LangGraph', 'Azure OpenAI (GPT-4)', 'RAG', 'Azure AI Search', 'Prompt Engineering'],
     },
     {
         title: 'Cloud & DevOps',
         gradient: 'from-emerald-500 to-teal-500',
         chipClass: 'bg-emerald-500/10 text-emerald-300 border-emerald-500/25 hover:bg-emerald-500/20',
-        skills: ['AWS S3', 'AWS Lambda', 'API Gateway', 'Docker', 'Terraform', 'GitHub Actions', 'CI/CD'],
+        skills: ['AWS (ECS · RDS · S3 · Glue · Athena · EKS)', 'Terraform', 'Docker', 'GitHub Actions', 'CI/CD', 'Kubernetes'],
     },
     {
-        title: 'Geoespacial & AgTech',
+        title: 'Geoespacial',
         gradient: 'from-orange-500 to-amber-500',
         chipClass: 'bg-orange-500/10 text-orange-300 border-orange-500/25 hover:bg-orange-500/20',
-        skills: ['Datos satelitales', 'NDVI', 'Polígonos KML', 'Series temporales', 'Procesamiento batch'],
+        skills: ['SentinelHub', 'Planet Labs', 'FAO WAPOR', 'rasterio', 'GDAL', 'geopandas', 'PostGIS', 'NDVI'],
+    },
+    {
+        title: 'Bases de datos',
+        gradient: 'from-slate-400 to-gray-500',
+        chipClass: 'bg-slate-500/10 text-slate-300 border-slate-500/25 hover:bg-slate-500/20',
+        skills: ['PostgreSQL', 'Redis', 'RabbitMQ', 'Amazon MQ', 'AWS Athena', 'Supabase', 'SQLite'],
     },
     {
         title: 'Frontend',
-        gradient: 'from-pink-500 to-rose-500',
-        chipClass: 'bg-pink-500/10 text-pink-300 border-pink-500/25 hover:bg-pink-500/20',
-        skills: ['Next.js 14', 'React 19', 'TypeScript', 'Tailwind CSS', 'Vite'],
-    },
-    {
-        title: 'Idiomas',
-        gradient: 'from-slate-400 to-gray-500',
-        chipClass: 'bg-slate-500/10 text-slate-300 border-slate-500/25 hover:bg-slate-500/20',
-        skills: ['Español (Nativo)', 'Inglés Técnico'],
+        gradient: 'from-indigo-500 to-blue-500',
+        chipClass: 'bg-indigo-500/10 text-indigo-300 border-indigo-500/25 hover:bg-indigo-500/20',
+        skills: ['Next.js 14', 'React 19', 'TypeScript', 'Tailwind CSS'],
     },
 ];
 
@@ -426,11 +433,12 @@ const CVWeb = () => {
                         >
                             <p className={`text-lg ${dk ? 'text-gray-300' : 'text-gray-700'} leading-relaxed`}>
                                 <span className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">5+ años</span>{' '}
-                                de experiencia en desarrollo Backend con Python. Especializado en{' '}
-                                <span className="font-semibold text-blue-400">APIs REST</span>,{' '}
-                                <span className="font-semibold text-purple-400">pipelines de datos</span> y{' '}
-                                <span className="font-semibold text-pink-400">procesamiento geoespacial</span>{' '}
-                                en el sector AgTech.
+                                construyendo sistemas backend, pipelines de datos y soluciones de IA en entornos productivos.
+                                Especializado en{' '}
+                                <span className="font-semibold text-blue-400">microservicios Python</span>,{' '}
+                                <span className="font-semibold text-purple-400">Data Lake en AWS con Airflow + dbt</span>,{' '}
+                                <span className="font-semibold text-pink-400">ML con XGBoost + MLflow</span> y{' '}
+                                <span className="font-semibold text-violet-400">agentes IA con LangChain + Azure OpenAI</span>.
                             </p>
                         </motion.div>
 
@@ -491,11 +499,12 @@ const CVWeb = () => {
                     <SectionHeader icon={Users} title="Perfil Profesional" gradient="from-blue-600 to-cyan-600" darkMode={dk} />
                     <div className={`${card} p-9 hover:-translate-y-1 transition-all duration-300`}>
                         <p className={`${dk ? 'text-gray-300' : 'text-gray-700'} leading-relaxed text-lg`}>
-                            Desarrollador Backend con foco en Data Engineering, experto en ecosistemas Python y bases de datos (PostgreSQL).
-                            Actualmente en Kilimo, centralizo el procesamiento de información climática y geoespacial diseñando pipelines bajo
-                            arquitecturas Data Lake (Bronze/Silver/Gold). Aporto valor diferencial mediante la orquestación de infraestructura cloud
-                            en AWS (Lambda, S3) usando Terraform y la creación de flujos CI/CD robustos. Mi rol como docente activo desde 2021
-                            consolida mis habilidades de comunicación y pensamiento estructurado.
+                            Backend Developer con foco en Data Engineering, ML y soluciones de IA, experto en Python y ecosistemas cloud (AWS + Azure).
+                            En Kilimo diseñé microservicios en producción con FastAPI/Django/Celery, construí un Data Lake Medallion sobre AWS
+                            S3/Glue/Athena orquestado con Airflow en Kubernetes, desarrollé pipelines ML (XGBoost · MLflow) para clasificación
+                            de eventos hídricos e implementé agentes IA conversacionales con LangChain/LangGraph + Azure OpenAI. Complemento
+                            con IaC Terraform modular, integración de datos satelitales (SentinelHub, Planet Labs) y experiencia docente con{' '}
+                            <span className={`font-semibold ${dk ? 'text-white' : 'text-gray-900'}`}>180+ alumnos formados</span>.
                         </p>
                     </div>
                 </motion.section>
@@ -522,7 +531,6 @@ const CVWeb = () => {
                                                 <a href="https://www.kilimo.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                                                     <h4 className={`text-2xl font-bold ${dk ? 'text-white' : 'text-gray-900'}`}>Kilimo</h4>
                                                 </a>
-                                                <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-semibold border border-green-500/30">Actual</span>
                                             </div>
                                             <p className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 font-bold text-lg mb-2">
                                                 Python Backend Developer / Data Engineer
@@ -538,20 +546,20 @@ const CVWeb = () => {
                                     </div>
 
                                     <p className={`${dk ? 'text-gray-300' : 'text-gray-700'} mb-6 leading-relaxed`}>
-                                        Desarrollo y mantenimiento de servicios backend en entornos productivos del sector AgTech,
-                                        con foco en integración y procesamiento de datos agronómicos, climáticos y satelitales.
+                                        Startup AgTech multi-país (Argentina, Chile, México, Perú, Colombia, Brasil) con plataforma en producción
+                                        para optimización de riego, monitoreo ambiental (MMRV) y agricultura regenerativa.
                                     </p>
 
                                     <div className={`grid md:grid-cols-2 gap-3 ${dk ? 'text-gray-300' : 'text-gray-700'} mb-6 text-sm`}>
                                         {[
-                                            'Desarrollo y mantenimiento de servicios backend en Python',
-                                            'Diseño y mantenimiento de pipelines de datos',
-                                            'Desarrollo de APIs REST',
-                                            'Procesamiento batch y asincrónico',
-                                            'Manipulación de datos geoespaciales (NDVI, series temporales)',
-                                            'Uso intensivo de AWS (S3, Lambda, API Gateway)',
-                                            'Code reviews, refactors y mejora continua',
-                                            'Participación en decisiones de arquitectura',
+                                            'Microservicios en producción: FastAPI · Django · Celery/Redis · SQLAlchemy 2.0 + Alembic, CI/CD con GitHub Actions → ECS Fargate',
+                                            'Data Lake Medallion (Bronze/Silver/Gold) en AWS S3/Glue/Athena, orquestado con Apache Airflow en EKS + dbt',
+                                            'Pipelines ML end-to-end — XGBoost · scikit-learn · MLflow — para clasificación de eventos hídricos',
+                                            'Agentes IA conversacionales con LangChain · LangGraph · Azure OpenAI (GPT-4) y pipeline RAG con Azure AI Search',
+                                            'Integración de SentinelHub, Planet Labs y FAO WAPOR; procesamiento geoespacial con rasterio, GDAL, geopandas',
+                                            'IaC Terraform modular: ECS Fargate, RDS PostgreSQL 15, Amazon MQ (RabbitMQ), ALB, ACM, Secrets Manager',
+                                            'Notificaciones multi-canal: Firebase FCM · Twilio SMS · Email con Factory + Strategy Pattern',
+                                            'Gestión DNS multi-proveedor (Cloudflare + AWS + Azure) y observabilidad de tareas Celery con AWS Lambda',
                                         ].map((item, i) => (
                                             <div key={i} className="flex items-start gap-2.5 group-hover:translate-x-1 transition-transform duration-200">
                                                 <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex-shrink-0" />
@@ -561,7 +569,7 @@ const CVWeb = () => {
                                     </div>
 
                                     <div className="flex flex-wrap gap-2">
-                                        {['Python', 'FastAPI', 'Flask', 'Django', 'SQLAlchemy', 'PostgreSQL', 'Docker', 'AWS', 'REST APIs'].map(t => (
+                                        {['Python', 'FastAPI', 'Django', 'SQLAlchemy', 'Celery', 'Redis', 'Airflow', 'dbt', 'MLflow', 'XGBoost', 'LangChain', 'Azure OpenAI', 'SentinelHub', 'rasterio', 'AWS ECS', 'S3', 'Glue', 'Athena', 'EKS', 'Terraform', 'Docker', 'GitHub Actions'].map(t => (
                                             <span key={t} className="px-3 py-1.5 bg-blue-600/15 text-blue-300 rounded-lg text-xs font-semibold border border-blue-500/25 hover:scale-105 transition-transform cursor-default">
                                                 {t}
                                             </span>
@@ -972,8 +980,8 @@ const CVWeb = () => {
                             <div>
                                 <h4 className={`text-2xl font-bold ${dk ? 'text-white' : 'text-gray-900'} mb-4`}>¿Hablamos?</h4>
                                 <p className={`${dk ? 'text-gray-300' : 'text-gray-700'} text-base mb-8 leading-relaxed`}>
-                                    Estoy abierto a nuevas oportunidades, colaboraciones en proyectos de
-                                    Data Engineering o Backend con Python, y desafíos en el sector AgTech.
+                                    Abierto a nuevas oportunidades en Backend Python, Data Engineering, ML Engineering o IA —
+                                    ya sea en startups, scaleups o empresas establecidas. Si tenés un desafío técnico interesante, hablemos.
                                 </p>
                                 <div className="space-y-5">
                                     <div className="flex items-center gap-4">
