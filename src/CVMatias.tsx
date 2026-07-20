@@ -491,7 +491,7 @@ const CVWeb = () => {
                     <SectionHeader icon={Users} title="Perfil Profesional" gradient="from-blue-600 to-cyan-600" darkMode={dk} />
                     <div className={`${card} p-9 hover:-translate-y-1 transition-all duration-300`}>
                         <p className={`${dk ? 'text-gray-300' : 'text-gray-700'} leading-relaxed text-lg`}>
-                            Desarrollador Backend con foco en Data Engineering, experto en ecosistemas Python (3.11+) y bases de datos (PostgreSQL).
+                            Desarrollador Backend con foco en Data Engineering, experto en ecosistemas Python y bases de datos (PostgreSQL).
                             Actualmente en Kilimo, centralizo el procesamiento de información climática y geoespacial diseñando pipelines bajo
                             arquitecturas Data Lake (Bronze/Silver/Gold). Aporto valor diferencial mediante la orquestación de infraestructura cloud
                             en AWS (Lambda, S3) usando Terraform y la creación de flujos CI/CD robustos. Mi rol como docente activo desde 2021
