@@ -529,7 +529,7 @@ const CVWeb = () => {
                                             </p>
                                             <div className={`flex items-center gap-2 ${dk ? 'text-gray-400' : 'text-gray-600'} text-sm`}>
                                                 <Calendar size={14} />
-                                                <span>Nov 2021 — Actualidad</span>
+                                                <span>Nov 2021 — Jul 2026</span>
                                                 <span className="mx-1">·</span>
                                                 <TrendingUp size={14} className="text-green-400" />
                                                 <span className="text-green-400 font-semibold">4+ años</span>
@@ -741,13 +741,13 @@ const CVWeb = () => {
                         </p>
                         <div className={`flex items-center gap-2 ${dk ? 'text-gray-400' : 'text-gray-600'} text-sm mb-6`}>
                             <Calendar size={14} />
-                            <span>Mar 2021 — Actualidad</span>
+                            <span>Mar 2021 — Mar 2026</span>
                             <span className="mx-1">·</span>
                             <Users size={14} className="text-indigo-400" />
-                            <span className="text-indigo-400 font-semibold">~120 alumnos activos</span>
+                            <span className="text-indigo-400 font-semibold">+180 alumnos formados</span>
                         </div>
                         <p className={`${dk ? 'text-gray-300' : 'text-gray-700'} mb-5 leading-relaxed`}>
-                            Docente de programación en Python con aproximadamente 120 alumnos activos, enfocado en la
+                            Docente de programación en Python con aproximadamente 180 alumnos formados, enfocado en la
                             preparación de futuros desarrolladores para el mundo laboral.
                         </p>
                         <div className={`grid md:grid-cols-2 gap-2.5 ${dk ? 'text-gray-300' : 'text-gray-700'} text-sm`}>
