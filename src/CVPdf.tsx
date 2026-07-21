@@ -165,15 +165,17 @@ export default function CVPdf() {
                         period="Nov 2021 – Jun 2026 · 4+ años"
                         note="Startup AgTech multi-país (Argentina, Chile, México, Perú, Colombia, Brasil) · equipo distribuido"
                         bullets={[
-                            'Diseñé e implementé múltiples microservicios en producción con FastAPI · Django · Celery/Redis · SQLAlchemy 2.0 + Alembic, bajo Layered Architecture y CI/CD completo (GitHub Actions → ECS Fargate)',
+                            'Diseñé e implementé múltiples microservicios en producción con FastAPI · Django · Celery/Redis · Taskiq/RabbitMQ · SQLAlchemy 2.0 + Alembic, bajo Layered Architecture (api → services → repositories) con routers por dominio y CI/CD completo (GitHub Actions → ECS Fargate)',
+                            'Auth end-to-end: OAuth2 con Django OAuth Toolkit, JWT custom (PyJWT · passlib · bcrypt) con middleware JWTBearer, Firebase Auth para mobile y API Key — diseño en capas (middleware → servicio, nunca mezclado)',
                             'Construí Data Lake Medallion (Bronze/Silver/Gold) sobre AWS S3/Glue/Athena, orquestado con Apache Airflow en Kubernetes (EKS) e integración dbt vía Astronomer Cosmos',
                             'Desarrollé pipelines ML end-to-end — XGBoost · scikit-learn · MLflow — para clasificación de eventos hídricos, con inference periódica deployada en ECS Fargate',
                             'Implementé agentes IA conversacionales con LangChain · LangGraph · Azure OpenAI (GPT-4) y prototipé pipeline RAG con Azure AI Search + Azure Document Intelligence',
                             'Integré SentinelHub, Planet Labs y FAO WAPOR; procesamiento geoespacial con rasterio, GDAL, geopandas y rasterstats a escala',
                             'IaC Terraform modular para múltiples microservicios: ECS Fargate, RDS PostgreSQL 15, Amazon MQ (RabbitMQ), ALB, ACM, Secrets Manager — multi-entorno stg/prod',
                             'Servicio de notificaciones multi-canal (Firebase FCM · Twilio SMS · Email) con Factory + Strategy Pattern para selección dinámica de canal en runtime',
+                            'Cultura de calidad: pytest · pytest-asyncio · pytest-django · factory-boy · Faker · freezegun · pytest-vcr · pytest-xdist — separación unit/integration con markers; mypy strict · ruff · pre-commit · pytest-cov',
                         ]}
-                        tags={['Python', 'FastAPI', 'Django', 'SQLAlchemy 2.0', 'Alembic', 'Celery', 'Redis', 'Airflow', 'dbt', 'MLflow', 'XGBoost', 'LangChain', 'Azure OpenAI', 'SentinelHub', 'rasterio', 'Firebase FCM', 'Twilio', 'AWS ECS', 'S3', 'Glue', 'Athena', 'EKS', 'Terraform', 'Docker', 'GitHub Actions']}
+                        tags={['Python', 'FastAPI', 'Django', 'SQLAlchemy 2.0', 'Alembic', 'Celery', 'Taskiq', 'Redis', 'OAuth2', 'JWT', 'pytest', 'Airflow', 'dbt', 'MLflow', 'XGBoost', 'LangChain', 'Azure OpenAI', 'SentinelHub', 'rasterio', 'Firebase FCM', 'Twilio', 'AWS ECS', 'S3', 'Glue', 'Athena', 'EKS', 'Terraform', 'Docker', 'GitHub Actions']}
                     />
 
                     <Entry
@@ -249,13 +251,14 @@ export default function CVPdf() {
                     <SectionTitle>Habilidades Técnicas</SectionTitle>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px 24px' }}>
                         {[
-                            { cat: 'Backend',        items: 'Python · FastAPI · Django · SQLAlchemy 2.0 · Alembic · Celery · Redis · Pydantic v2' },
+                            { cat: 'Backend',        items: 'Python · FastAPI · Django · SQLAlchemy 2.0 · Alembic · Celery · Taskiq · Redis · OAuth2 · JWT · Pydantic v2' },
                             { cat: 'Data & ML',      items: 'Apache Airflow · dbt · MLflow · XGBoost · scikit-learn · Polars · Pandas · Medallion Architecture' },
                             { cat: 'IA / LLM',       items: 'LangChain · LangGraph · Azure OpenAI (GPT-4) · RAG · Azure AI Search · Azure Document Intelligence' },
                             { cat: 'Cloud & IaC',    items: 'AWS (ECS · RDS · S3 · Glue · Athena · Lambda · EKS) · Kubernetes · Terraform · Docker · GitHub Actions' },
                             { cat: 'Geoespacial',    items: 'SentinelHub · Planet Labs · FAO WAPOR · rasterio · GDAL · geopandas · PostGIS' },
                             { cat: 'Bases de datos', items: 'PostgreSQL · Redis · RabbitMQ · Amazon MQ · SQLite · Supabase' },
                             { cat: 'Integraciones',  items: 'Firebase Admin SDK · Firebase FCM · Twilio SMS · Cloudflare' },
+                            { cat: 'Testing & Calidad', items: 'pytest · pytest-asyncio · pytest-django · factory-boy · Faker · freezegun · pytest-vcr · mypy strict · ruff · pre-commit' },
                         ].map(({ cat, items }) => (
                             <div key={cat} style={{ paddingBottom: 4 }}>
                                 <span style={{ fontSize: 10.5, fontWeight: 700, color: NAVY }}>{cat}: </span>

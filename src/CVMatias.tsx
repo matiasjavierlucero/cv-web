@@ -185,7 +185,7 @@ const SKILL_CATEGORIES = [
         title: 'Backend',
         gradient: 'from-blue-500 to-cyan-500',
         chipClass: 'bg-blue-500/10 text-blue-300 border-blue-500/25 hover:bg-blue-500/20',
-        skills: ['Python', 'FastAPI', 'Django', 'SQLAlchemy 2.0', 'Alembic', 'Celery', 'Redis', 'Pydantic v2', 'REST APIs'],
+        skills: ['Python', 'FastAPI', 'Django', 'SQLAlchemy 2.0', 'Alembic', 'Celery', 'Taskiq', 'Redis', 'OAuth2', 'JWT', 'Pydantic v2', 'REST APIs'],
     },
     {
         title: 'Data & ML',
@@ -222,6 +222,12 @@ const SKILL_CATEGORIES = [
         gradient: 'from-indigo-500 to-blue-500',
         chipClass: 'bg-indigo-500/10 text-indigo-300 border-indigo-500/25 hover:bg-indigo-500/20',
         skills: ['Next.js 14', 'React 19', 'TypeScript', 'Tailwind CSS'],
+    },
+    {
+        title: 'Testing & Calidad',
+        gradient: 'from-yellow-500 to-amber-500',
+        chipClass: 'bg-yellow-500/10 text-yellow-300 border-yellow-500/25 hover:bg-yellow-500/20',
+        skills: ['pytest', 'pytest-asyncio', 'pytest-django', 'factory-boy', 'Faker', 'freezegun', 'pytest-vcr', 'pytest-xdist', 'mypy strict', 'ruff', 'pre-commit', 'pytest-cov'],
     },
 ];
 
@@ -552,7 +558,8 @@ const CVWeb = () => {
 
                                     <div className={`grid md:grid-cols-2 gap-3 ${dk ? 'text-gray-300' : 'text-gray-700'} mb-6 text-sm`}>
                                         {[
-                                            'Microservicios en producción: FastAPI · Django · Celery/Redis · SQLAlchemy 2.0 + Alembic, CI/CD con GitHub Actions → ECS Fargate',
+                                            'Microservicios en producción: FastAPI · Django · Celery/Redis · Taskiq/RabbitMQ · SQLAlchemy 2.0 + Alembic, Layered Architecture (api → services → repositories), CI/CD GitHub Actions → ECS Fargate',
+                                            'Auth end-to-end: OAuth2 (Django OAuth Toolkit), JWT custom (PyJWT · passlib · bcrypt) con middleware JWTBearer, Firebase Auth y API Key — diseño en capas (middleware → servicio)',
                                             'Data Lake Medallion (Bronze/Silver/Gold) en AWS S3/Glue/Athena, orquestado con Apache Airflow en EKS + dbt',
                                             'Pipelines ML end-to-end — XGBoost · scikit-learn · MLflow — para clasificación de eventos hídricos',
                                             'Agentes IA conversacionales con LangChain · LangGraph · Azure OpenAI (GPT-4) y pipeline RAG con Azure AI Search',
@@ -560,6 +567,7 @@ const CVWeb = () => {
                                             'IaC Terraform modular: ECS Fargate, RDS PostgreSQL 15, Amazon MQ (RabbitMQ), ALB, ACM, Secrets Manager',
                                             'Notificaciones multi-canal: Firebase FCM · Twilio SMS · Email con Factory + Strategy Pattern',
                                             'Gestión DNS multi-proveedor (Cloudflare + AWS + Azure) y observabilidad de tareas Celery con AWS Lambda',
+                                            'Calidad: pytest · pytest-asyncio · pytest-django · factory-boy · Faker · freezegun · pytest-vcr — unit/integration con markers; mypy strict · ruff · pre-commit',
                                         ].map((item, i) => (
                                             <div key={i} className="flex items-start gap-2.5 group-hover:translate-x-1 transition-transform duration-200">
                                                 <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex-shrink-0" />
@@ -569,7 +577,7 @@ const CVWeb = () => {
                                     </div>
 
                                     <div className="flex flex-wrap gap-2">
-                                        {['Python', 'FastAPI', 'Django', 'SQLAlchemy', 'Celery', 'Redis', 'Airflow', 'dbt', 'MLflow', 'XGBoost', 'LangChain', 'Azure OpenAI', 'SentinelHub', 'rasterio', 'AWS ECS', 'S3', 'Glue', 'Athena', 'EKS', 'Terraform', 'Docker', 'GitHub Actions'].map(t => (
+                                        {['Python', 'FastAPI', 'Django', 'SQLAlchemy', 'Celery', 'Taskiq', 'Redis', 'OAuth2', 'JWT', 'pytest', 'Airflow', 'dbt', 'MLflow', 'XGBoost', 'LangChain', 'Azure OpenAI', 'SentinelHub', 'rasterio', 'AWS ECS', 'S3', 'Glue', 'Athena', 'EKS', 'Terraform', 'Docker', 'GitHub Actions'].map(t => (
                                             <span key={t} className="px-3 py-1.5 bg-blue-600/15 text-blue-300 rounded-lg text-xs font-semibold border border-blue-500/25 hover:scale-105 transition-transform cursor-default">
                                                 {t}
                                             </span>
